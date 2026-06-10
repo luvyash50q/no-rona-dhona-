@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Sana 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      transition: background 1s;
+    }
+
+    .page {
+      display: none;
+      padding-top: 80px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 38px;
+    }
+
+    p {
+      font-size: 20px;
+      padding: 0 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      background: white;
+      color: #ff4d6d;
+      cursor: pointer;
+    }
+
+    img {
+      width: 220px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0px 0px 20px white;
+    }
+
+    /* 💕 Cute floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 18px;
+      animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<audio autoplay loop>
+  <source src="https://files.catbox.moe/8p5s3e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>For My Favorite Person Sana 💖</h1>
+  <p>
+    I know tumhara mood off hai 😒  
+    par itna bhi attitude theek nahi hai madam 😤  
+    thoda sa smile bhi kar liya karo 😊  
+    warna main seriously aa ke hasa dunga 😏✨
+  </p>
+  <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif">
+  <br>
+  <button onclick="nextPage(2)">Next 😄</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h1>Tum Thodi Si Special Ho 😌</h1>
+  <p>
+    Dekh Sana… life thodi si complicated hoti hai 😵  
+    but tu already thodi si pagal hai 🤪  
+    toh tension lene ki kya zarurat 😂  
+    bas chill kar aur thoda mujhe yaad kar le 😌💖
+  </p>
+  <img src="https://media.giphy.com/media/3oz8xKaR836UJOYeOc/giphy.gif">
+  <br>
+  <button onclick="nextPage(3)">Next 🫶</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h1>Sach Bolu Toh... 💕</h1>
+  <p>
+    Jab tu sad hoti hai na 😔  
+    mujhe bilkul acha nahi lagta 😒  
+    kyuki tu hasi me zyada cute lagti hai 😍  
+    toh jaldi se smile kar warna fine lagega 😏💸
+  </p>
+  <img src="https://media.giphy.com/media/l4FGpPki5v2Bcd6Ss/giphy.gif">
+  <br>
+  <button onclick="nextPage(4)">Next 😎</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h1>Bas Ek Baat Yaad Rakhna ❤️</h1>
+  <p>
+    Chahe mood off ho ya life thodi rough ho 😅  
+    main hamesha tere saath hu 🤗  
+    tu special hai… thodi si annoying bhi 😏  
+    but still meri favorite person 💖✨
+  </p>
+  <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif">
+  <br>
+  <button onclick="nextPage(5)">Last 💌</button>
+</div>
+
+<!-- PAGE 5 (POETRY) -->
+<div class="page" id="page5">
+  <h1>For You Sana 💖</h1>
+  <p>
+    Tera muskurana hi meri khushi hai 😊  
+    tu khush rahe bas yahi dua hai 💖  
+    chahe kitni bhi door ho tu mujhse…  
+    par dil ke sabse paas tu hi hai ❤️  
+
+    aur haan… thoda sa pagalpan bhi zaruri hai 😏  
+    kyuki bina uske tu “Sana” nahi lagti 🤭✨
+  </p>
+  <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif">
+</div>
+
+<script>
+const colors = [
+  "linear-gradient(45deg, #ff9a9e, #fad0c4)",
+  "linear-gradient(45deg, #a18cd1, #fbc2eb)",
+  "linear-gradient(45deg, #fbc2eb, #a6c1ee)",
+  "linear-gradient(45deg, #ffecd2, #fcb69f)",
+  "linear-gradient(45deg, #89f7fe, #66a6ff)"
+];
+
+function nextPage(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page" + page).classList.add("active");
+  document.body.style.background = colors[page-1];
+}
+
+/* 💕 hearts */
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = ["💖","💘","💕","💞"][Math.floor(Math.random()*4)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 200);
+</script>
+
+</body>
+</html>
